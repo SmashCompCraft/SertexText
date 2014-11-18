@@ -63,6 +63,7 @@ end
 function left(y, color, text)
   term.setCursorPos(1, y)
   term.setTextColor(color)
+  write(text)
 end
 
 --slow color
