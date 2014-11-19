@@ -113,5 +113,5 @@ end
 
 function getInfo()
 	write("SertexText API by Ale2610 and MultMine")
-	write("Version: 1.3")
+	write("\nVersion: 1.3")
 end
