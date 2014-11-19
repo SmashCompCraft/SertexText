@@ -3,6 +3,12 @@ SertexText
 
 How To Install SertexText!
 
+Lastest Version:
+
+Run this line
+
+st = fs.open("sertextext", "w") st.write(http.get("https://raw.githubusercontent.com/Sertex-Team/SertexText/master/src/lastest/sertextext.lua").readAll()) st.close()
+
 SertexText 1.3:
 
 Run this line
