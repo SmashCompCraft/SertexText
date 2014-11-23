@@ -4,7 +4,7 @@
 --normal
 
 function right(y, text )
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos(w - #text, y)
         write(text)
 end
@@ -15,21 +15,21 @@ function left(y, text)
 end
 
 function center(y, text )
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos((w - #text) / 2, y)
         write(text)
 end
 
 function centerDisplay( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
+        w, h = term.getSize()
+        term.setCursorPos(( w - string.len(text)) / 2, h / 2)
         write( text )
 end
 
 --slow
 
 function slowRight(y, text )
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos(w - #text, y)
         textutils.slowWrite(text)
 end
@@ -40,14 +40,14 @@ function slowLeft(y, text)
 end
 
 function slowCenter(y, text )
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos((w - #text) / 2, y)
         textutils.slowWrite(text)
 end
 
 function slowCenterDisplay( text )
-        local x, y = term.getSize()
-        term.setCursorPos(( x - string.len(text)) / 2, y / 2)
+        w, h = term.getSize()
+        term.setCursorPos(( w - string.len(text)) / 2, h / 2)
         textutils.slowWrite( text )
 end
 
@@ -57,7 +57,7 @@ function rightColor(y, color, text)
   if not term.isColor() then
     print("Colors not supported")
   end
-  local w, h = term.getSize()
+  w, h = term.getSize()
   term.setCursorPos(w - #text, y)
   term.setTextColor(color)
   write(text)
@@ -76,7 +76,7 @@ function centerColor(y, color, text)
   if not term.isColor() then
     print("Colors not supported")
   end
-	local w, h = term.getSize()
+       w, h = term.getSize()
 	term.setCursorPos((w - #text) / 2, y)
 	term.setTextColor(color)
 	write(text)
@@ -86,7 +86,7 @@ function CenterDisplayColor(color, text)
   if not term.isColor() then
     print("Colors not supported")
   end
-        local x, y = term.getSize()
+        x, y = term.getSize()
         term.setCursorPos(( x - string.len(text)) / 2, y / 2)
 		term.setTextColor(color)
         write( text )
@@ -98,7 +98,7 @@ function slowRightColor(y, color, text )
   if not term.isColor() then
     print("Colors not supported")
   end
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos(w - #text, y)
 		term.setTextColor(color)
         textutils.slowWrite(text)
@@ -117,7 +117,7 @@ function slowCenterColor(y, color, text )
   if not term.isColor() then
     print("Colors not supported")
   end
-        local w, h = term.getSize()
+        w, h = term.getSize()
         term.setCursorPos((w - #text) / 2, y)
 		term.setTextColor(color)
         textutils.slowWrite(text)
@@ -127,7 +127,7 @@ function slowCenterDisplayColor(color, text)
   if not term.isColor() then
     print("Colors not supported")
   end
-        local x, y = term.getSize()
+        x, y = term.getSize()
         term.setCursorPos(( x - string.len(text)) / 2, y / 2)
 		term.setTextColor(color)
         textutils.slowWrite( text )
