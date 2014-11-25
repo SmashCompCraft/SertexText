@@ -163,8 +163,17 @@ function slowSetCursorPosTextColor(x, y, color, text)
   textutils.slowWrite(text)
 end
 
-function test()
+function monitor(monitor, x, y, text)
+  stMonitor = peripheral.wrap(monitor)
+  stMonitor.setCursorPos(x, y)
+  stMonitor.write(text)
+end
 
+function monitorColor(monitor, x, y, color, text)
+  stMonitor = peripheral.wrap(monitor)
+  stMonitor.setCursorPos(x, y)
+  stMonitor.setTextColor(color)
+  stMonitor.write(text)
 end
 
 --info
