@@ -1,5 +1,5 @@
 --SertexText API by Ale2610 and MultMine
---Beta 1.4
+--1.4
 
 --normal
 
@@ -140,7 +140,7 @@ function setCursorPosText(x, y, text)
   write(text)
 end
 
-function slowSetCursorPos(x, y, text)
+function slowSetCursorPosText(x, y, text)
   term.setCursorPos(x, y)
   textutils.slowWrite(text)
 end
@@ -180,11 +180,30 @@ function slowMonitor(monitor, x, y, text) --don't use
   stMonitor = peripheral.wrap(monitor)
   stMonitor.setCursorPos(x, y)
   stMonitor.write(text)
+  
+  --From textutils API
+  nRate = nRate or 20
+    if nRate < 0 then
+        error( "Rate must be positive", 2 )
+    end
+    local nSleep = 1 / nRate
+        
+    sText = tostring( sText )
+    local x,y = term.getCursorPos(x,y)
+    local len = string.len( sText )
+    
+    for n=1,len do
+        term.setCursorPos( x, y )
+        sleep( nSleep )
+        local nLines = write( string.sub( sText, 1, n ) )
+        local newX, newY = term.getCursorPos()
+        y = newY - nLines
+    end
+	--end
 end
 
 --info
 
 function getInfo()
-	write("SertexText API by Ale2610 and MultMine")
-	write("\nVersion: Beta 1.4")
+	write("SertexText API by Ale2610 and MultMine\nVersion: 1.4\n")
 end
