@@ -176,6 +176,12 @@ function monitorColor(monitor, x, y, color, text)
   stMonitor.write(text)
 end
 
+function slowMonitor(monitor, x, y, text) --don't use
+  stMonitor = peripheral.wrap(monitor)
+  stMonitor.setCursorPos(x, y)
+  stMonitor.write(text)
+end
+
 --info
 
 function getInfo()
